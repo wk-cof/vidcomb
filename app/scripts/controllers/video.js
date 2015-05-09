@@ -1,4 +1,4 @@
-/* globals Firebase, Stupeflix */
+/* globals $, Firebase, Stupeflix */
 'use strict';
 
 /**
@@ -24,6 +24,16 @@ angular.module('videoDayHackApp')
     var syncObject = $firebaseObject(ref);
     syncObject.$bindTo($scope, 'data');
     $scope.messages = $firebaseArray(ref);
+    setTimeout(function() {
+      var videos = $scope.messages;
+      for (var i = 0; i < videos.length; ++i) {
+        $("#ziggeo-container")
+          .append(
+            "<ziggeo ziggeo-video='" +
+            videos[i].token +
+            "'ziggeo-width=320 ziggeo-height=240 ></ziggeo>");
+      }
+    }, 2000);
 
     $scope.debug = function() {
       console.log($scope.messages);
@@ -56,7 +66,18 @@ angular.module('videoDayHackApp')
         thumbnail_time: 1.0
       }).then(function(response){
         // on Success
-        console.debug(response);
+        $scope.result = response.result;
+        $scope.compiledUrl = response.result.export;
+        $('#showCompiled').append(
+          '<p>Your video is ready! <a href="' +
+          $scope.compiledUrl +
+          '">Click here to view it</a></p>');
+        $('#showCompiled').append(
+          '<div><video src="' +
+          $scope.compiledUrl +
+          '" controls "></video></div>'
+        );
+        console.log(response);
       }, function(response){
         // on Error
         console.debug(response);
@@ -82,4 +103,5 @@ angular.module('videoDayHackApp')
           "' duration='" + duration + "'/>" +
           "\n    </effect>"
     };
+
   });
