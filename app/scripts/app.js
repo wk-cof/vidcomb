@@ -10,7 +10,8 @@
  */
 angular
   .module('videoDayHackApp', [
-    'ngRoute'
+    'ngRoute',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider

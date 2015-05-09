@@ -1,2 +1,28 @@
 <p>This is the video view.</p>
 {{routeParams}}
+<p>
+{{ data }}
+</p>
+
+<button ng-click="debug()">Debug!</button>
+<button ng-click="compile()">Compile!</button>
+
+<script type="text/javascript" charset="utf-8">
+function retriveUsingId(id) {
+  var ref = new Firebase('https://glaring-inferno-2666.firebaseio.com/events/' + id);
+  ref.on('child_added', function(snapshot) {
+    var item = snapshot.val();
+    if (item.type === 'ziggeo') {
+      console.log(item.token);
+    }
+    console.log(item.type);
+    console.log(item.url);
+    //$('#videos').append(...);
+  });
+}
+
+/**
+ * Takes in a list of urls and generates the XML needed to send to Stupeflix
+ */
+
+</script>
