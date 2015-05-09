@@ -30,9 +30,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/create">Create</a></li>
-          <li><a ng-href="#/record/123">Test Record</a></li>
+          <li class="active navbar-menu-item"><a ng-href="#">Home</a></li>
+          <li><a class="navbar-menu-item" ng-href="#/create">Create</a></li>
+          <li><a class="navbar-menu-item" ng-href="#/record/123">Test Record</a></li>
         </ul>
         
         <ul class="nav navbar-nav navbar-right">
@@ -40,6 +40,13 @@
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
+
+    <!--script type="text/javascript">
+    $('.navbar-menu-item').click( function() {
+      $(this).addClass('active').siblings().removeClass('active');
+      console.log("things happened");
+    });
+    </script-->
 
     <div ng-view=""></div>
     <!--[if lt IE 9]>
