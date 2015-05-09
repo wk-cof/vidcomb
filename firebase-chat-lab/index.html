@@ -1,0 +1,59 @@
+<!--
+  Copyright 2015 Google Inc. All Rights Reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    
+  </head>
+  <body>
+    <div id='messagesDiv'>
+      <!-- Where the messages will go -->
+    </div>
+    <input type='text' id='nameInput' placeholder='Name'>
+    <input type='text' id='messageInput' placeholder='Message'>
+
+    <script>
+      $(document).ready(function() {
+        <!-- 2. Create a Firebase reference -->
+        var myDataRef = new Firebase('https://glaring-inferno-2666.firebaseio.com/');
+
+        $('#messageInput').keypress(function (e) {
+          if (e.keyCode == 13) {
+            var name = $('#nameInput').val();
+            var text = $('#messageInput').val();
+
+            <!-- 3. Push a message when "Send" is clicked -->
+            myDataRef.push({name: name, text: text});
+
+            $('#messageInput').val(''); 
+          }
+        });
+
+        <!-- 4. Listen to the child_added event, and display the message -->
+        myDataRef.on("child_added", function (snapshot) {
+          var msg = snapshot.val();
+          function displayChatMessage(name, text) {
+            $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+            $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+          };
+          displayChatMessage(msg.name, msg.text);
+        });        
+      });
+    </script>
+  </body>
+</html>
