@@ -1,7 +1,8 @@
 /* Space out content a bit */
 body {
+  /*padding-left: 15px;*/
   background-color: #5bdaf9;
-  background-image: url("/images/VidComb_Background1.jpg");
+  background-image: url("/images/background_desktop.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   /*background-attachment: fixed; 
@@ -22,8 +23,9 @@ body {
   width: 400px;
 }
 .navbar-default {
-    background-color: #505253;
-    border-color: #505253;
+  /*padding-left: -15px;  */
+  background-color: #505253;
+  border-color: #505253;
 }
 .navbar-brand{
   padding: 0px 15px;
@@ -51,6 +53,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
+    padding-left: 15px;
     max-width: 730px;
   }
 }
