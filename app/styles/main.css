@@ -5,6 +5,7 @@ body {
   background-image: url("/images/background_final.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  color: white;
   /*background-attachment: fixed; 
   background-position: center; 
   padding-top: 20px;
@@ -19,6 +20,13 @@ body {
   padding-right: 15px;
 }
 
+#welcome-vidcomb{
+  width: 600px;
+  text-align: center;
+}
+.text-center{
+  text-align: center;
+}
 .form-control{
   width: 400px;
 }
