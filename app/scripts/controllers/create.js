@@ -14,6 +14,7 @@ angular.module('videoDayHackApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.navbarModel.create = true;
     $scope.createModel = {
     	targetName: '',
     	title: '',
@@ -21,7 +22,6 @@ angular.module('videoDayHackApp')
     	email: '',
     }
     $scope.submitForm = function () {
-    	// debugger;
     	var mangledName = encodeURIComponent($scope.createModel.targetName + '-' + $scope.createModel.title);
    	  	// var ref = new Firebase('https://glaring-inferno-2666.firebaseio.com/events/' + mangledName);
     	$location.path('/record/' + mangledName);

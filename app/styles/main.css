@@ -73,7 +73,7 @@ body {
 .target-input{
   background-color: rgba(0,0,0,0);
   border-color: rgba(0,0,0,0);
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
 }
 
 /* Main marketing message and sign up button */
