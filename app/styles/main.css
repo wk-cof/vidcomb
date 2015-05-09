@@ -1,5 +1,6 @@
 /* Space out content a bit */
 body {
+  background-color: #5bdaf9;
   background-image: url("/images/VidComb_Background1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed; 
@@ -16,8 +17,20 @@ body {
   padding-right: 15px;
 }
 
+.navbar-default {
+    background-color: #505253;
+    border-color: #505253;
+}
+.no-padding{
+  padding: 0px 0px;
+}
+.navbar-brand {
+  /*color: $colDefault;*/
+}
+
 /* Custom page header */
 .header {
+  background-color: #F8F8F8;
   border-bottom: 1px solid #e5e5e5;
 }
 /* Make the masthead heading the same height as the navigation */
