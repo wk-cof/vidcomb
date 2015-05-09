@@ -15,4 +15,5 @@ angular.module('videoDayHackApp')
       'Karma'
     ];
     $scope.currentRoute = $routeParams;
+    window.ROUTE_ID = $routeParams.recordID;
   });
