@@ -10,7 +10,8 @@
  */
 angular
   .module('videoDayHackApp', [
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
