@@ -21,26 +21,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <nav class="navbar navbar-default" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#"><img src="images/VidComb_Logo_Blue.png" alt="Logo" height="50" width="100"></a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active navbar-menu-item"><a ng-href="#">Home</a></li>
-          <li><a class="navbar-menu-item" ng-href="#/create">Create</a></li>
-          <li><a class="navbar-menu-item" ng-href="#/record/123">Test Record</a></li>
-        </ul>
-        
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://github.com/wk-cof/vidcomb"><img src="images/github.svg" alt="Take our code!" height="20" width="20"></a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </nav>
-
+    <navbar> </navbar>
     <!--script type="text/javascript">
     $('.navbar-menu-item').click( function() {
       $(this).addClass('active').siblings().removeClass('active');
@@ -48,7 +29,9 @@
     });
     </script-->
 
-    <div ng-view=""></div>
+    <div ng-view="">
+
+    </div>
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
@@ -69,6 +52,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/create.js"></script>
         <script src="scripts/controllers/record.js"></script>
+        <script src="scripts/directives/navbar.js"></script>
         <!-- endbuild -->
 </body>
 </html>
