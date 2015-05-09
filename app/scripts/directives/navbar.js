@@ -16,12 +16,14 @@ angular.module('videoDayHackApp')
       	scope.navbarModel = {
       		home: true,
       		create: false,
-      		record: false
+      		record: false,
+      		video: false
       	}
       	scope.setActive = function ( attr ) {
       		scope.navbarModel.home = false;
       		scope.navbarModel.create = false;
       		scope.navbarModel.record = false;
+      		scope.navbarModel.video = false;
       		scope.navbarModel[attr] = true;
       	};
       }

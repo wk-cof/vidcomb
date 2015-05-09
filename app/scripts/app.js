@@ -26,6 +26,10 @@ angular
         templateUrl: 'views/record.html',
         controller: 'RecordCtrl'
       })
+      .when('/video', {
+        templateUrl: 'views/video.html',
+        controller: 'VideoCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
