@@ -1,8 +1,12 @@
-<p>This is the video view.</p>
-{{routeParams}}
-<p>
-{{ data }}
-</p>
+<style type="text/css" media="screen">
+#ziggeo-container div {
+  display: inline-block;
+}
+</style>
+<link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
+
+<div id="ziggeo-container">
+</div>
 
 <button ng-click="debug()">Debug!</button>
 <button ng-click="compile()">Compile!</button>
@@ -17,7 +21,6 @@ function retriveUsingId(id) {
     }
     console.log(item.type);
     console.log(item.url);
-    //$('#videos').append(...);
   });
 }
 

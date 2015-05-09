@@ -1,4 +1,4 @@
-/* globals Firebase, Stupeflix */
+/* globals $, Firebase, Stupeflix */
 'use strict';
 
 /**
@@ -24,6 +24,12 @@ angular.module('videoDayHackApp')
     var syncObject = $firebaseObject(ref);
     syncObject.$bindTo($scope, 'data');
     $scope.messages = $firebaseArray(ref);
+    setTimeout(function() {
+      var videos = $scope.messages;
+      for (var i = 0; i < videos.length; ++i) {
+        $("#ziggeo-container").append("<ziggeo ziggeo-video='" + videos[i].token + "'></ziggeo>");
+      }
+    }, 2000);
 
     $scope.debug = function() {
       console.log($scope.messages);
@@ -82,4 +88,5 @@ angular.module('videoDayHackApp')
           "' duration='" + duration + "'/>" +
           "\n    </effect>"
     };
+
   });
