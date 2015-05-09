@@ -111,3 +111,13 @@ body {
 .video-recorder-outer {
   margin: auto
 }
+
+.compile {
+  color: rgba(91, 218, 249, 1);
+  font-size: 42px;
+  background: white;
+  padding: 16px;
+  border: none;
+  font-weight: 700;
+  border-radius: 10px;
+}
