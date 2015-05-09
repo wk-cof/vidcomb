@@ -1,5 +1,9 @@
 /* Space out content a bit */
 body {
+  background-image: url("/images/VidComb_Background1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-position: center; 
   padding-top: 20px;
   padding-bottom: 20px;
 }
