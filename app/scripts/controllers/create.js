@@ -8,7 +8,7 @@
  * Controller of the videoDayHackApp
  */
 angular.module('videoDayHackApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('CreateCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
