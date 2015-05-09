@@ -121,3 +121,8 @@ body {
   font-weight: 700;
   border-radius: 10px;
 }
+
+#showCompiled {
+  font-size: 24px;
+  text-align: center;
+}
