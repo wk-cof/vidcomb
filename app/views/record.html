@@ -1,1 +1,18 @@
-<p>This is a route: {{currentRoute}}</p>
+<ziggeo ziggeo-width=320 ziggeo-height=240 ziggeo-limit=20>
+</ziggeo>
+
+<link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+ZiggeoApi.Events.on("submitted", function (data) {
+  console.debug('ZiggeoApi' + data)
+  saveVideoUrl(
+    ZiggeoApi.Videos.sources(data.video.token)[0]);
+});
+
+function saveVideoUrl(url) {
+  var ref = new Firebase('https://glaring-inferno-2666.firebaseio.com/events/' + window.ROUTE_ID);
+  ref.push({'url': url});
+}
+</script>
