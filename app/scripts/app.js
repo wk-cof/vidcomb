@@ -22,6 +22,10 @@ angular
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
       })
+      .when('/record/:recordID', {
+        templateUrl: 'views/record.html',
+        controller: 'RecordCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
