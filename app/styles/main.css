@@ -2,11 +2,12 @@
 body {
   background-color: #5bdaf9;
   background-image: url("/images/VidComb_Background1.jpg");
-  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-repeat: no-repeat;
   background-attachment: fixed; 
   background-position: center; 
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 20px;*/
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -21,13 +22,9 @@ body {
     background-color: #505253;
     border-color: #505253;
 }
-.no-padding{
-  padding: 0px 0px;
+.navbar-brand{
+  padding: 0px 15px;
 }
-.navbar-brand {
-  /*color: $colDefault;*/
-}
-
 /* Custom page header */
 .header {
   background-color: #F8F8F8;
