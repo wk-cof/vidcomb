@@ -26,7 +26,7 @@ angular
         templateUrl: 'views/record.html',
         controller: 'RecordCtrl'
       })
-      .when('/video', {
+      .when('/video/:recordID', {
         templateUrl: 'views/video.html',
         controller: 'VideoCtrl'
       })
