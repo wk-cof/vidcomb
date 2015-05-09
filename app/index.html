@@ -21,14 +21,40 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand no-padding" href="#"><img src="images/VidComb_Logo_Blue.png" alt="Logo" height="50" width="100"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a ng-href="#">Home</a></li>
+          <li><a ng-href="#/create">Create</a></li>
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/wk-cof/vidcomb"><img src="images/github.svg" alt="Take our code!" height="20" width="20"></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+    <!--div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a ng-href="#">Home</a></li>
           <li><a ng-href="#/create">Create</a></li>
           <li><a ng-href="#">Contact</a></li>
         </ul>
-        <img src="images/VidComb_Logo_Blue.png" alt="Logo" height="50" width="100">
+        <div class="navbar-header">
+          <img src="images/VidComb_Logo_Blue.png" alt="Logo" height="50" width="100">
+        </div>
       </div>
 
       <div ng-view=""></div>
@@ -36,7 +62,7 @@
       <div class="footer">
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
-    </div>
+    </div-->
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
