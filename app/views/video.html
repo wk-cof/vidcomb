@@ -28,8 +28,22 @@ function retriveUsingId(id) {
   });
 }
 
-/**
- * Takes in a list of urls and generates the XML needed to send to Stupeflix
- */
+function auth() {
+  var fbref = new Firebase('https://glaring-inferno-2666.firebaseio.com');
+  var scope = 'email,https://www.googleapis.com/auth/youtube.upload'
+  fbref.authWithOAuthPopup("google", function(error, authData) {
+      console.debug(error);
+      console.debug(authData);
+      var accessToken = authData.google.accessToken;
+      window.ACCESS_TOKEN = accessToken;
+      $.get('http://localhost:8080/?accessToken=' +
+        window.ACCESS_TOKEN + '&url=' + window.COMPILED_URL)
+      .done(function(response) {
+      });
+  }, {
+    remember: "sessionOnly",
+    scope: scope
+  });
+}
 
 </script>

@@ -72,6 +72,7 @@ angular.module('videoDayHackApp')
         // on Success
         $scope.result = response.result;
         $scope.compiledUrl = response.result.export;
+        window.COMPILED_URL = $scope.compiledUrl;
         $('#showCompiled').append(
           '<p>Your video is ready! <a href="' +
           $scope.compiledUrl +
@@ -106,6 +107,25 @@ angular.module('videoDayHackApp')
           url +
           "' duration='" + duration + "'/>" +
           "\n    </effect>"
+    };
+
+    $scope.vimeo = function() {
+      var VIMEO_KEY = 'a4a6529b5b28098e5c268e2dc9d208b0';
+      function setHeader(xhr) {
+       xhr.setRequestHeader('Authorization', 'bearer ' + VIMEO_KEY);
+      }
+      $.ajax({
+        url: 'https://api.vimeo.com/me/videos',
+        type: 'POST',
+        datatype: 'json',
+        data: {
+          type: 'pull',
+          link: window.COMPILED_URL
+        },
+        success: function(resp) { console.log(resp); },
+        error: function(resp) { console.log(resp); },
+        beforeSend: setHeader
+      });
     };
 
   });

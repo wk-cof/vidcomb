@@ -17,8 +17,6 @@
 
 <link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
 <script type="text/javascript" charset="utf-8">
-var fbref = new Firebase('https://glaring-inferno-2666.firebaseio.com');
-
 var saveVideoUrl = function(params) {
   var ref = new Firebase('https://glaring-inferno-2666.firebaseio.com/events/' + window.ROUTE_ID);
   var saved = ref.push(params);
@@ -47,15 +45,4 @@ options = {
 var button = Dropbox.createChooseButton(options);
 document.getElementById("dropbox-container").appendChild(button);
 
-function auth() {
-  var scope = 'email,https://www.googleapis.com/auth/youtube.upload'
-  fbref.authWithOAuthPopup("google", function(error, authData) {
-      console.debug(error);
-      console.debug(authData);
-      var accessToken = authData.google.accessToken;
-  }, {
-    remember: "sessionOnly",
-    scope: scope
-  });
-}
 </script>
