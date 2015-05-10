@@ -11,6 +11,10 @@
 angular.module('videoDayHackApp')
   .controller('VideoCtrl', function (
       $scope, $routeParams, $firebaseObject, $firebaseArray) {
+    if (!$scope.navbarModel) {
+      $scope.navbarModel = {};
+    }
+    $scope.navbarModel.video = true;
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
